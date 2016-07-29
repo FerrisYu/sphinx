@@ -1,0 +1,1371 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>SimpleGIS API Reference &mdash; final 1.0.0 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="final 1.0.0 documentation" href="index.html"/>
+        <link rel="prev" title="Getting Started with SimpleGIS" href="tutorials.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> final
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="tutorials.html">Getting Started with SimpleGIS</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">SimpleGIS API Reference</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#geographicpoint">GeographicPoint</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#geographicdistance">GeographicDistance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#polygon">Polygon</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#track">Track</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#gpxfparser">GPXFParser</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#locationinfo">LocationInfo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#valueoutofrangeerror">ValueOutOfRangeError</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#invalidformaterror">InvalidFormatError</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="index.html">final</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+      
+    <li>SimpleGIS API Reference</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/API Reference.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-SimpleGIS">
+<span id="simplegis-api-reference"></span><h1>SimpleGIS API Reference<a class="headerlink" href="#module-SimpleGIS" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="geographicpoint">
+<h2>GeographicPoint<a class="headerlink" href="#geographicpoint" title="Permalink to this headline">¶</a></h2>
+<p>A GeographicPoint object describes a geographic location using latitude, longitude, and elevation.</p>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="#SimpleGIS.GeographicPoint" title="SimpleGIS.GeographicPoint"><code class="xref py py-obj docutils literal"><span class="pre">GeographicPoint</span></code></a>(latitude,&nbsp;longitude[,&nbsp;...])</td>
+<td>Construct a GeographicPoint object.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#SimpleGIS.GeographicPoint.get_closestPoint" title="SimpleGIS.GeographicPoint.get_closestPoint"><code class="xref py py-obj docutils literal"><span class="pre">GeographicPoint.get_closestPoint</span></code></a>(gp_list)</td>
+<td>Gets the closest GeographicPoint object in a list of GeographicPoint based on their 2D direct distance with the current GeographicPoint.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#SimpleGIS.GeographicPoint.get_distance" title="SimpleGIS.GeographicPoint.get_distance"><code class="xref py py-obj docutils literal"><span class="pre">GeographicPoint.get_distance</span></code></a>(other)</td>
+<td>Gets the 2D geographic distance between the other and this Geographic Point.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#SimpleGIS.GeographicPoint.get_furthestPoint" title="SimpleGIS.GeographicPoint.get_furthestPoint"><code class="xref py py-obj docutils literal"><span class="pre">GeographicPoint.get_furthestPoint</span></code></a>(gp_list)</td>
+<td>Gets the furtest GeographicPoint object in a list of GeographicPoint based on their 2D direct distance with the current GeographicPoint.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#SimpleGIS.GeographicPoint.get_latitude" title="SimpleGIS.GeographicPoint.get_latitude"><code class="xref py py-obj docutils literal"><span class="pre">GeographicPoint.get_latitude</span></code></a>()</td>
+<td>Gets the latitude of the current geographic coordinate.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#SimpleGIS.GeographicPoint.get_locationInfo" title="SimpleGIS.GeographicPoint.get_locationInfo"><code class="xref py py-obj docutils literal"><span class="pre">GeographicPoint.get_locationInfo</span></code></a>()</td>
+<td>Gets the location information for the current geographic coordinate.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#SimpleGIS.GeographicPoint.get_longitude" title="SimpleGIS.GeographicPoint.get_longitude"><code class="xref py py-obj docutils literal"><span class="pre">GeographicPoint.get_longitude</span></code></a>()</td>
+<td>Gets the longitude of the current geographic coordinate.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#SimpleGIS.GeographicPoint.get_time" title="SimpleGIS.GeographicPoint.get_time"><code class="xref py py-obj docutils literal"><span class="pre">GeographicPoint.get_time</span></code></a>()</td>
+<td>Gets the time when the point was taken.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#SimpleGIS.GeographicPoint.now" title="SimpleGIS.GeographicPoint.now"><code class="xref py py-obj docutils literal"><span class="pre">GeographicPoint.now</span></code></a>()</td>
+<td>Set this object with the 3D geographic attributes of the current positition, and the time when it&#8217;s taken.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#SimpleGIS.GeographicPoint.toString" title="SimpleGIS.GeographicPoint.toString"><code class="xref py py-obj docutils literal"><span class="pre">GeographicPoint.toString</span></code></a>()</td>
+<td>Return a string of that value it in degrees, minutes, seconds format.</td>
+</tr>
+</tbody>
+</table>
+<dl class="class">
+<dt id="SimpleGIS.GeographicPoint">
+<em class="property">class </em><code class="descclassname">SimpleGIS.</code><code class="descname">GeographicPoint</code><span class="sig-paren">(</span><em>latitude</em>, <em>longitude</em>, <em>elevation=None</em>, <em>time=None</em><span class="sig-paren">)</span><a class="headerlink" href="#SimpleGIS.GeographicPoint" title="Permalink to this definition">¶</a></dt>
+<dd><p>Construct a GeographicPoint object.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>latitude(float)</strong> &#8211; latitude of the geographic coordinate. Range: -90 ~ 90.</li>
+<li><strong>longitude(float)</strong> &#8211; longitude of the geographic coordinate. Range: -180 ~ 180.</li>
+<li><strong>elevation(float)</strong> &#8211; (optional) elevation of the geographic coordinate. None if this is a 2D geographic coordinates.</li>
+<li><strong>time(datetime)</strong> &#8211; (optional) The time when the point was recorded.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><p class="first last"><strong>ValueOutOfRangeError</strong> &#8211; Raise when latitude or longitude is out of range.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="SimpleGIS.GeographicPoint.get_closestPoint">
+<code class="descname">get_closestPoint</code><span class="sig-paren">(</span><em>gp_list</em><span class="sig-paren">)</span><a class="headerlink" href="#SimpleGIS.GeographicPoint.get_closestPoint" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets the closest GeographicPoint object in a list of GeographicPoint based on their 2D direct distance with the current GeographicPoint.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>gp_list(GeographicPoint[])</strong> &#8211; A list of GeographicPoint used to measure the 2D distance.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="#SimpleGIS.GeographicPoint" title="SimpleGIS.GeographicPoint">SimpleGIS.GeographicPoint</a></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">SimpleGIS</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">l</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">l</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">SimpleGIS</span><span class="o">.</span><span class="n">GeographicPoint</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">20</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">l</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">SimpleGIS</span><span class="o">.</span><span class="n">GeographicPoint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">gp</span> <span class="o">=</span> <span class="n">SimpleGIS</span><span class="o">.</span><span class="n">GeographicPoint</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span><span class="mi">40</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">cp</span> <span class="o">=</span> <span class="n">gp</span><span class="o">.</span><span class="n">get_closestPoint</span><span class="p">(</span><span class="n">l</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">cp</span><span class="o">.</span><span class="n">get_latitude</span><span class="p">()</span>
+<span class="go">10</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="SimpleGIS.GeographicPoint.get_distance">
+<code class="descname">get_distance</code><span class="sig-paren">(</span><em>other</em><span class="sig-paren">)</span><a class="headerlink" href="#SimpleGIS.GeographicPoint.get_distance" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets the 2D geographic distance between the other and this Geographic Point.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Distance is measure in two dimension. 3D geographic points are treated as 2D points.</p>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>other(GeographicPoint)</strong> &#8211; The GeographicPoint used to measure the distance.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="#SimpleGIS.GeographicDistance" title="SimpleGIS.GeographicDistance">SimpleGIS.GeographicDistance</a></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">SimpleGIS</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">p1</span> <span class="o">=</span> <span class="n">SimpleGIS</span><span class="o">.</span><span class="n">GeographicPoint</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">p2</span> <span class="o">=</span> <span class="n">SimpleGIS</span><span class="o">.</span><span class="n">GeographicPoint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">gd</span> <span class="o">=</span> <span class="n">p1</span><span class="o">.</span><span class="n">get_distance</span><span class="p">(</span><span class="n">p2</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">gd</span><span class="o">.</span><span class="n">get_direct_distance</span><span class="p">()</span>
+<span class="go">5</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="SimpleGIS.GeographicPoint.get_furthestPoint">
+<code class="descname">get_furthestPoint</code><span class="sig-paren">(</span><em>gp_list</em><span class="sig-paren">)</span><a class="headerlink" href="#SimpleGIS.GeographicPoint.get_furthestPoint" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets the furtest GeographicPoint object in a list of GeographicPoint based on their 2D direct distance with the current GeographicPoint.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>gp_list(GeographicPoint[])</strong> &#8211; A list of GeographicPoint used to measure the 2D distance.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="#SimpleGIS.GeographicPoint" title="SimpleGIS.GeographicPoint">SimpleGIS.GeographicPoint</a></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">SimpleGIS</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">l</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">l</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">SimpleGIS</span><span class="o">.</span><span class="n">GeographicPoint</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">20</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">l</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">SimpleGIS</span><span class="o">.</span><span class="n">GeographicPoint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">))</span>        
+<span class="gp">&gt;&gt;&gt; </span><span class="n">gp</span> <span class="o">=</span> <span class="n">SimpleGIS</span><span class="o">.</span><span class="n">GeographicPoint</span><span class="o">.</span><span class="n">now</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">fp</span> <span class="o">=</span> <span class="n">gp</span><span class="o">.</span><span class="n">get_furthestPoint</span><span class="p">(</span><span class="n">l</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">fp</span><span class="o">.</span><span class="n">get_latitude</span><span class="p">()</span>
+<span class="go">0</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="SimpleGIS.GeographicPoint.get_latitude">
+<code class="descname">get_latitude</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#SimpleGIS.GeographicPoint.get_latitude" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets the latitude of the current geographic coordinate.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">float</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">SimpleGIS</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">gp</span> <span class="o">=</span> <span class="n">SimpleGIS</span><span class="o">.</span><span class="n">GeographicPoint</span><span class="o">.</span><span class="n">now</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span> <span class="n">gp</span><span class="o">.</span><span class="n">get_latitude</span><span class="p">()</span>
+<span class="go">49.246292</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="SimpleGIS.GeographicPoint.get_locationInfo">
+<code class="descname">get_locationInfo</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#SimpleGIS.GeographicPoint.get_locationInfo" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets the location information for the current geographic coordinate.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="#SimpleGIS.LocationInfo" title="SimpleGIS.LocationInfo">SimpleGIS.LocationInfo</a></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">SimpleGIS</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">gp</span> <span class="o">=</span> <span class="n">SimpleGIS</span><span class="o">.</span><span class="n">GeographicPoint</span><span class="o">.</span><span class="n">now</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">loc</span> <span class="o">=</span> <span class="n">gp</span><span class="o">.</span><span class="n">get_locationInfo</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span> <span class="n">loc</span><span class="o">.</span><span class="n">get_timeZone</span><span class="p">()</span>
+<span class="go">Pacific</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="SimpleGIS.GeographicPoint.get_longitude">
+<code class="descname">get_longitude</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#SimpleGIS.GeographicPoint.get_longitude" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets the longitude of the current geographic coordinate.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">float</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">SimpleGIS</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">gp</span> <span class="o">=</span> <span class="n">SimpleGIS</span><span class="o">.</span><span class="n">GeographicPoint</span><span class="o">.</span><span class="n">now</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span> <span class="n">gp</span><span class="o">.</span><span class="n">get_longitude</span><span class="p">()</span>
+<span class="go">-123.116226</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="SimpleGIS.GeographicPoint.get_time">
+<code class="descname">get_time</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#SimpleGIS.GeographicPoint.get_time" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets the time when the point was taken.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">datetime</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">SimpleGIS</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">gp</span> <span class="o">=</span> <span class="n">SimpleGIS</span><span class="o">.</span><span class="n">GeographicPoint</span><span class="o">.</span><span class="n">now</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span> <span class="n">gp</span><span class="o">.</span><span class="n">get_time</span><span class="p">()</span>
+<span class="go">datetime(2015, 6, 10, 15, 8, 24, 78915)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="SimpleGIS.GeographicPoint.now">
+<code class="descname">now</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#SimpleGIS.GeographicPoint.now" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set this object with the 3D geographic attributes of the current positition, and the time when it&#8217;s taken.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="#SimpleGIS.GeographicPoint" title="SimpleGIS.GeographicPoint">SimpleGIS.GeographicPoint</a></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">SimpleGIS</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">gp</span> <span class="o">=</span> <span class="n">SimpleGIS</span><span class="o">.</span><span class="n">GeographicPoint</span><span class="o">.</span><span class="n">now</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">loc</span> <span class="o">=</span> <span class="n">gp</span><span class="o">.</span><span class="n">get_locationInfo</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span> <span class="n">loc</span><span class="o">.</span><span class="n">get_timeZone</span><span class="p">()</span>
+<span class="go">Pacific</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="SimpleGIS.GeographicPoint.toString">
+<code class="descname">toString</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#SimpleGIS.GeographicPoint.toString" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a string of that value it in degrees, minutes, seconds format.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">str</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">SimpleGIS</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">p1</span> <span class="o">=</span> <span class="n">SimpleGIS</span><span class="o">.</span><span class="n">GeographicPoint</span><span class="p">(</span><span class="mf">49.276765</span><span class="p">,</span><span class="o">-</span><span class="mf">122.917957</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">p1</span><span class="o">.</span><span class="n">toString</span>
+<span class="go">49d16m36s N 122d55m4s W         </span>
+</pre></div>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="geographicdistance">
+<h2>GeographicDistance<a class="headerlink" href="#geographicdistance" title="Permalink to this headline">¶</a></h2>
+<p>A GeographicDistance object describes the 2D distance between two geographic points.</p>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="#SimpleGIS.GeographicDistance" title="SimpleGIS.GeographicDistance"><code class="xref py py-obj docutils literal"><span class="pre">GeographicDistance</span></code></a>(d_latitude,&nbsp;d_longitude)</td>
+<td>Construct a GeographicDistance object</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#SimpleGIS.GeographicDistance.get_directDistance" title="SimpleGIS.GeographicDistance.get_directDistance"><code class="xref py py-obj docutils literal"><span class="pre">GeographicDistance.get_directDistance</span></code></a>()</td>
+<td>Gets the direct_distance between the two geographic points in km.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#SimpleGIS.GeographicDistance.get_latitude_diff" title="SimpleGIS.GeographicDistance.get_latitude_diff"><code class="xref py py-obj docutils literal"><span class="pre">GeographicDistance.get_latitude_diff</span></code></a>()</td>
+<td>Gets the latitude difference between the two geographic points.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#SimpleGIS.GeographicDistance.get_longitude_diff" title="SimpleGIS.GeographicDistance.get_longitude_diff"><code class="xref py py-obj docutils literal"><span class="pre">GeographicDistance.get_longitude_diff</span></code></a>()</td>
+<td>Gets the longitude difference between the two geographic points.</td>
+</tr>
+</tbody>
+</table>
+<dl class="class">
+<dt id="SimpleGIS.GeographicDistance">
+<em class="property">class </em><code class="descclassname">SimpleGIS.</code><code class="descname">GeographicDistance</code><span class="sig-paren">(</span><em>d_latitude</em>, <em>d_longitude</em><span class="sig-paren">)</span><a class="headerlink" href="#SimpleGIS.GeographicDistance" title="Permalink to this definition">¶</a></dt>
+<dd><p>Construct a GeographicDistance object</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>d_latitude(float)</strong> &#8211; latitude difference between the two geographic points. Range: 0 ~ 180.</li>
+<li><strong>d_longitude(float)</strong> &#8211; longitude difference between the two geographic points. Range: 0 ~ 360.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><p class="first last"><strong>ValueOutOfRangeError</strong> &#8211; Raise when latitude or longitude difference is out of range.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">You shouldn&#8217;t construct objects of this class yourself, instead, you will get the object from the get_distance method in GeographicPoint class.</p>
+</div>
+<dl class="method">
+<dt id="SimpleGIS.GeographicDistance.get_directDistance">
+<code class="descname">get_directDistance</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#SimpleGIS.GeographicDistance.get_directDistance" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets the direct_distance between the two geographic points in km.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">float</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">SimpleGIS</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">p1</span> <span class="o">=</span> <span class="n">SimpleGIS</span><span class="o">.</span><span class="n">GeographicPoint</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">p2</span> <span class="o">=</span> <span class="n">SimpleGIS</span><span class="o">.</span><span class="n">GeographicPoint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">gd</span> <span class="o">=</span> <span class="n">p1</span><span class="o">.</span><span class="n">get_distance</span><span class="p">(</span><span class="n">p2</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">gd</span><span class="o">.</span><span class="n">get_direct_distance</span><span class="p">()</span>
+<span class="go">555.986</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="SimpleGIS.GeographicDistance.get_latitude_diff">
+<code class="descname">get_latitude_diff</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#SimpleGIS.GeographicDistance.get_latitude_diff" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets the latitude difference between the two geographic points.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">float</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">SimpleGIS</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">p1</span> <span class="o">=</span> <span class="n">SimpleGIS</span><span class="o">.</span><span class="n">GeographicPoint</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">p2</span> <span class="o">=</span> <span class="n">SimpleGIS</span><span class="o">.</span><span class="n">GeographicPoint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">gd</span> <span class="o">=</span> <span class="n">p1</span><span class="o">.</span><span class="n">get_distance</span><span class="p">(</span><span class="n">p2</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">gd</span><span class="o">.</span><span class="n">get_latitude_diff</span><span class="p">()</span>
+<span class="go">3</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="SimpleGIS.GeographicDistance.get_longitude_diff">
+<code class="descname">get_longitude_diff</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#SimpleGIS.GeographicDistance.get_longitude_diff" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets the longitude difference between the two geographic points.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">float</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">SimpleGIS</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">p1</span> <span class="o">=</span> <span class="n">SimpleGIS</span><span class="o">.</span><span class="n">GeographicPoint</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">p2</span> <span class="o">=</span> <span class="n">SimpleGIS</span><span class="o">.</span><span class="n">GeographicPoint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">gd</span> <span class="o">=</span> <span class="n">p1</span><span class="o">.</span><span class="n">get_distance</span><span class="p">(</span><span class="n">p2</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">gd</span><span class="o">.</span><span class="n">get_longitude_diff</span><span class="p">()</span>
+<span class="go">4</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="polygon">
+<h2>Polygon<a class="headerlink" href="#polygon" title="Permalink to this headline">¶</a></h2>
+<p>A polygon is an area surroundded by a list of geographic points, which are nodes of a polygon.</p>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="#SimpleGIS.Polygon" title="SimpleGIS.Polygon"><code class="xref py py-obj docutils literal"><span class="pre">Polygon</span></code></a>(gp_list)</td>
+<td>Construct a Polygon object.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#SimpleGIS.Polygon.add" title="SimpleGIS.Polygon.add"><code class="xref py py-obj docutils literal"><span class="pre">Polygon.add</span></code></a>(gp)</td>
+<td>Add a new point to the polygon.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#SimpleGIS.Polygon.get_GPList" title="SimpleGIS.Polygon.get_GPList"><code class="xref py py-obj docutils literal"><span class="pre">Polygon.get_GPList</span></code></a>()</td>
+<td>Return the stored list of geographic points</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#SimpleGIS.Polygon.get_GeoJsonFormat" title="SimpleGIS.Polygon.get_GeoJsonFormat"><code class="xref py py-obj docutils literal"><span class="pre">Polygon.get_GeoJsonFormat</span></code></a>()</td>
+<td>Convert a polygon object to a valid GeoJson string.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#SimpleGIS.Polygon.get_area" title="SimpleGIS.Polygon.get_area"><code class="xref py py-obj docutils literal"><span class="pre">Polygon.get_area</span></code></a>()</td>
+<td>Return the area of the polygon.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#SimpleGIS.Polygon.isValid" title="SimpleGIS.Polygon.isValid"><code class="xref py py-obj docutils literal"><span class="pre">Polygon.isValid</span></code></a>()</td>
+<td>Check whether the current gp_list con construct a valid polygon.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#SimpleGIS.Polygon.is_inbound" title="SimpleGIS.Polygon.is_inbound"><code class="xref py py-obj docutils literal"><span class="pre">Polygon.is_inbound</span></code></a>(gp)</td>
+<td>Returns true if the geographic point is inside or on edge of the polygon, false if not.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#SimpleGIS.Polygon.next" title="SimpleGIS.Polygon.next"><code class="xref py py-obj docutils literal"><span class="pre">Polygon.next</span></code></a>()</td>
+<td>Return the next geographic point in gp_list.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#SimpleGIS.Polygon.remove" title="SimpleGIS.Polygon.remove"><code class="xref py py-obj docutils literal"><span class="pre">Polygon.remove</span></code></a>(i)</td>
+<td>Remove a point from the polygon</td>
+</tr>
+</tbody>
+</table>
+<dl class="class">
+<dt id="SimpleGIS.Polygon">
+<em class="property">class </em><code class="descclassname">SimpleGIS.</code><code class="descname">Polygon</code><span class="sig-paren">(</span><em>gp_list</em><span class="sig-paren">)</span><a class="headerlink" href="#SimpleGIS.Polygon" title="Permalink to this definition">¶</a></dt>
+<dd><p>Construct a Polygon object.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>gp_list(GeographicPoint[])</strong> &#8211; a list of geographic points which represense the nodes of the polygon.</td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="SimpleGIS.Polygon.add">
+<code class="descname">add</code><span class="sig-paren">(</span><em>gp</em><span class="sig-paren">)</span><a class="headerlink" href="#SimpleGIS.Polygon.add" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add a new point to the polygon.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>gp(GeographicPoint)</strong> &#8211; a geographic point to add to the polygon.</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">SimpleGIS</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">l</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">l</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">SimpleGIS</span><span class="o">.</span><span class="n">GeographicPoint</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">0</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">l</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">SimpleGIS</span><span class="o">.</span><span class="n">GeographicPoint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">p</span> <span class="o">=</span> <span class="n">Polygon</span><span class="p">(</span><span class="n">l</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">p</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">SimpleGIS</span><span class="o">.</span><span class="n">GeographicPoint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">p</span><span class="o">.</span><span class="n">get_area</span><span class="p">()</span>
+<span class="go">6</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="SimpleGIS.Polygon.get_GPList">
+<code class="descname">get_GPList</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#SimpleGIS.Polygon.get_GPList" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the stored list of geographic points</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">list</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">SimpleGIS</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">l</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">l</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">SimpleGIS</span><span class="o">.</span><span class="n">GeographicPoint</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">20</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">l</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">SimpleGIS</span><span class="o">.</span><span class="n">GeographicPoint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">p</span> <span class="o">=</span> <span class="n">Polygon</span><span class="p">(</span><span class="n">l</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">l2</span> <span class="o">=</span> <span class="n">p</span><span class="o">.</span><span class="n">get_GPList</span><span class="p">();</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span> <span class="n">l2</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">get_latitude</span><span class="p">();</span>
+<span class="go">10</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="SimpleGIS.Polygon.get_GeoJsonFormat">
+<code class="descname">get_GeoJsonFormat</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#SimpleGIS.Polygon.get_GeoJsonFormat" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convert a polygon object to a valid GeoJson string. GeoJon format is a valid format to export to google map.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">str</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">SimpleGIS</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">l</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">l</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">SimpleGIS</span><span class="o">.</span><span class="n">GeographicPoint</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">l</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">SimpleGIS</span><span class="o">.</span><span class="n">GeographicPoint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">l</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">SimpleGIS</span><span class="o">.</span><span class="n">GeographicPoint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">p</span> <span class="o">=</span> <span class="n">Polygon</span><span class="p">(</span><span class="n">l</span><span class="p">)</span> 
+<span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="n">p</span><span class="o">.</span><span class="n">get_GeoJsonFormat</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span> <span class="n">s</span>
+<span class="go">{&quot;type&quot;:&quot;FeatureCollection&quot;,&quot;features&quot;:[{&quot;type&quot;:&quot;Feature&quot;,&quot;properties&quot;:{},&quot;geometry&quot;:{&quot;type&quot;:&quot;Point&quot;,&quot;coordinates&quot;:[-122.92156219482422,49.27654080832181]}},{&quot;type&quot;:&quot;Feature&quot;,&quot;properties&quot;:{},&quot;geometry&quot;:{&quot;type&quot;:&quot;Polygon&quot;,&quot;coordinates&quot;:[[[-122.93460845947266,49.28325995376115],[-122.90096282958983,49.283035996995174],[-122.90096282958983,49.269820747425406],[-122.93289184570312,49.27049279471154],[-122.93460845947266,49.28325995376115]]]}}]}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="SimpleGIS.Polygon.get_area">
+<code class="descname">get_area</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#SimpleGIS.Polygon.get_area" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the area of the polygon.</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">SimpleGIS</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">l</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">l</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">SimpleGIS</span><span class="o">.</span><span class="n">GeographicPoint</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">0</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">l</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">SimpleGIS</span><span class="o">.</span><span class="n">GeographicPoint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">l</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">SimpleGIS</span><span class="o">.</span><span class="n">GeographicPoint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">p</span> <span class="o">=</span> <span class="n">Polygon</span><span class="p">(</span><span class="n">l</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">p</span><span class="o">.</span><span class="n">get_area</span><span class="p">()</span>
+<span class="go">6</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">p</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">SimpleGIS</span><span class="o">.</span><span class="n">GeographicPoint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">p</span><span class="o">.</span><span class="n">get_area</span><span class="p">()</span>
+<span class="go">-1</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">At least 3 geographic points are needed to get a polygon area. Polygon with least than 3 geographic points will return -1.</p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="SimpleGIS.Polygon.isValid">
+<code class="descname">isValid</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#SimpleGIS.Polygon.isValid" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check whether the current gp_list con construct a valid polygon.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">Boolean</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">SimpleGIS</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">l</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">l</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">SimpleGIS</span><span class="o">.</span><span class="n">GeographicPoint</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">0</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">l</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">SimpleGIS</span><span class="o">.</span><span class="n">GeographicPoint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">l</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">SimpleGIS</span><span class="o">.</span><span class="n">GeographicPoint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">p</span> <span class="o">=</span> <span class="n">Polygon</span><span class="p">(</span><span class="n">l</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">p</span><span class="o">.</span><span class="n">isValid</span><span class="p">()</span>
+<span class="go">true</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">p</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">SimpleGIS</span><span class="o">.</span><span class="n">GeographicPoint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">p</span><span class="o">.</span><span class="n">isValid</span><span class="p">()</span>
+<span class="go">false</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="SimpleGIS.Polygon.is_inbound">
+<code class="descname">is_inbound</code><span class="sig-paren">(</span><em>gp</em><span class="sig-paren">)</span><a class="headerlink" href="#SimpleGIS.Polygon.is_inbound" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns true if the geographic point is inside or on edge of the polygon, false if not.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>gp(GeographicPoint)</strong> &#8211; a geographic point to check whether is inbound.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">Boolean</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">SimpleGIS</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">l</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">l</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">SimpleGIS</span><span class="o">.</span><span class="n">GeographicPoint</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">0</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">l</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">SimpleGIS</span><span class="o">.</span><span class="n">GeographicPoint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">l</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">SimpleGIS</span><span class="o">.</span><span class="n">GeographicPoint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">p</span> <span class="o">=</span> <span class="n">Polygon</span><span class="p">(</span><span class="n">l</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">gp</span> <span class="o">=</span> <span class="n">SimpleGIS</span><span class="o">.</span><span class="n">GeographicPoint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">p</span><span class="o">.</span><span class="n">is_inbound</span><span class="p">(</span><span class="n">gp</span><span class="p">)</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="SimpleGIS.Polygon.next">
+<code class="descname">next</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#SimpleGIS.Polygon.next" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the next geographic point in gp_list. Starts at the first point, and returns None after it reach the last point of the list.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="#SimpleGIS.GeographicPoint" title="SimpleGIS.GeographicPoint">SimpleGIS.GeographicPoint</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="SimpleGIS.Polygon.remove">
+<code class="descname">remove</code><span class="sig-paren">(</span><em>i</em><span class="sig-paren">)</span><a class="headerlink" href="#SimpleGIS.Polygon.remove" title="Permalink to this definition">¶</a></dt>
+<dd><p>Remove a point from the polygon</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>i(int)</strong> &#8211; the index of the geographic point to remove.</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">SimpleGIS</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">l</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">l</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">SimpleGIS</span><span class="o">.</span><span class="n">GeographicPoint</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">0</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">l</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">SimpleGIS</span><span class="o">.</span><span class="n">GeographicPoint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">l</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">SimpleGIS</span><span class="o">.</span><span class="n">GeographicPoint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">p</span> <span class="o">=</span> <span class="n">Polygon</span><span class="p">(</span><span class="n">l</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">p</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">p</span><span class="o">.</span><span class="n">get_area</span><span class="p">()</span>
+<span class="go">-1</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="track">
+<h2>Track<a class="headerlink" href="#track" title="Permalink to this headline">¶</a></h2>
+<p>A Track is an ordered list of geographic points. It represense a series of geographic points that are captured in order.</p>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="#SimpleGIS.Track" title="SimpleGIS.Track"><code class="xref py py-obj docutils literal"><span class="pre">Track</span></code></a>(gp_list)</td>
+<td>Construct a Track object.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#SimpleGIS.Track.get_GPList" title="SimpleGIS.Track.get_GPList"><code class="xref py py-obj docutils literal"><span class="pre">Track.get_GPList</span></code></a>()</td>
+<td>Return a list of geographic points</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#SimpleGIS.Track.get_GeoJsonFormat" title="SimpleGIS.Track.get_GeoJsonFormat"><code class="xref py py-obj docutils literal"><span class="pre">Track.get_GeoJsonFormat</span></code></a>()</td>
+<td>Convert a track object to a valid GeoJson string.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#SimpleGIS.Track.get_endTime" title="SimpleGIS.Track.get_endTime"><code class="xref py py-obj docutils literal"><span class="pre">Track.get_endTime</span></code></a>()</td>
+<td>Return the recorded time of the last stored geographic point.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#SimpleGIS.Track.get_point" title="SimpleGIS.Track.get_point"><code class="xref py py-obj docutils literal"><span class="pre">Track.get_point</span></code></a>(i)</td>
+<td>Return the geographic point at index location.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#SimpleGIS.Track.get_startTime" title="SimpleGIS.Track.get_startTime"><code class="xref py py-obj docutils literal"><span class="pre">Track.get_startTime</span></code></a>()</td>
+<td>Return the recorded time of the first stored geographic point.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#SimpleGIS.Track.get_totalDistance" title="SimpleGIS.Track.get_totalDistance"><code class="xref py py-obj docutils literal"><span class="pre">Track.get_totalDistance</span></code></a>()</td>
+<td>Return the total distance traveled of the track in km .</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#SimpleGIS.Track.next" title="SimpleGIS.Track.next"><code class="xref py py-obj docutils literal"><span class="pre">Track.next</span></code></a>()</td>
+<td>Return the next geographic point in the ordered geographic point list.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#SimpleGIS.Track.push_back" title="SimpleGIS.Track.push_back"><code class="xref py py-obj docutils literal"><span class="pre">Track.push_back</span></code></a>(gp)</td>
+<td>Add a new point to the end of the ordered list.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#SimpleGIS.Track.remove" title="SimpleGIS.Track.remove"><code class="xref py py-obj docutils literal"><span class="pre">Track.remove</span></code></a>(i)</td>
+<td>Remove a point from the polygon</td>
+</tr>
+</tbody>
+</table>
+<dl class="class">
+<dt id="SimpleGIS.Track">
+<em class="property">class </em><code class="descclassname">SimpleGIS.</code><code class="descname">Track</code><span class="sig-paren">(</span><em>gp_list</em><span class="sig-paren">)</span><a class="headerlink" href="#SimpleGIS.Track" title="Permalink to this definition">¶</a></dt>
+<dd><p>Construct a Track object.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>gp_list(GeographicDistance[])</strong> &#8211; a ordered list of 3D geographic points with recorded time.</td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="SimpleGIS.Track.get_GPList">
+<code class="descname">get_GPList</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#SimpleGIS.Track.get_GPList" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a list of geographic points</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">list</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">SimpleGIS</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">l</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">l</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">SimpleGIS</span><span class="o">.</span><span class="n">GeographicPoint</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">20</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">l</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">SimpleGIS</span><span class="o">.</span><span class="n">GeographicPoint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="n">Track</span><span class="p">(</span><span class="n">l</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">l2</span> <span class="o">=</span> <span class="n">t</span><span class="o">.</span><span class="n">get_GPList</span><span class="p">();</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span> <span class="n">l2</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">get_latitude</span><span class="p">();</span>
+<span class="go">10</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="SimpleGIS.Track.get_GeoJsonFormat">
+<code class="descname">get_GeoJsonFormat</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#SimpleGIS.Track.get_GeoJsonFormat" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convert a track object to a valid GeoJson string. GeoJon format is a valid format to export to google map.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">str</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">SimpleGIS</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">l</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">l</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">SimpleGIS</span><span class="o">.</span><span class="n">GeographicPoint</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">l</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">SimpleGIS</span><span class="o">.</span><span class="n">GeographicPoint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="n">Track</span><span class="p">(</span><span class="n">l</span><span class="p">)</span>    
+<span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="n">t</span><span class="o">.</span><span class="n">get_GeoJsonFormat</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span> <span class="n">s</span>
+<span class="go">{&quot;type&quot;:&quot;FeatureCollection&quot;,&quot;features&quot;:[{&quot;type&quot;:&quot;Feature&quot;,&quot;properties&quot;:{},&quot;geometry&quot;:{&quot;type&quot;:&quot;Point&quot;,&quot;coordinates&quot;:[-122.92156219482422,49.27654080832181]}},{&quot;type&quot;:&quot;Feature&quot;,&quot;properties&quot;:{},&quot;geometry&quot;:{&quot;type&quot;:&quot;Polygon&quot;,&quot;coordinates&quot;:[[[-122.93460845947266,49.28325995376115],[-122.90096282958983,49.283035996995174],[-122.90096282958983,49.269820747425406],[-122.93289184570312,49.27049279471154],[-122.93460845947266,49.28325995376115]]]}}]}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="SimpleGIS.Track.get_endTime">
+<code class="descname">get_endTime</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#SimpleGIS.Track.get_endTime" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the recorded time of the last stored geographic point.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">datetime</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">SimpleGIS</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">l</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">l</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">SimpleGIS</span><span class="o">.</span><span class="n">GeographicPoint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="n">Track</span><span class="p">(</span><span class="n">l</span><span class="p">)</span> 
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="o">.</span><span class="n">get_endTime</span><span class="p">()</span>
+<span class="go">datetime(2015, 6, 10, 15, 8, 24, 78915)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="SimpleGIS.Track.get_point">
+<code class="descname">get_point</code><span class="sig-paren">(</span><em>i</em><span class="sig-paren">)</span><a class="headerlink" href="#SimpleGIS.Track.get_point" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the geographic point at index location.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>i(int)</strong> &#8211; index of the geographic point to get.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="#SimpleGIS.GeographicPoint" title="SimpleGIS.GeographicPoint">SimpleGIS.GeographicPoint</a></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">SimpleGIS</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">l</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">l</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">SimpleGIS</span><span class="o">.</span><span class="n">GeographicPoint</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">20</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">l</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">SimpleGIS</span><span class="o">.</span><span class="n">GeographicPoint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="n">Track</span><span class="p">(</span><span class="n">l</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">gp</span> <span class="o">=</span> <span class="n">t</span><span class="o">.</span><span class="n">get_point</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span> <span class="n">gp</span><span class="o">.</span><span class="n">get_latitude</span><span class="p">();</span>
+<span class="go">10</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="SimpleGIS.Track.get_startTime">
+<code class="descname">get_startTime</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#SimpleGIS.Track.get_startTime" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the recorded time of the first stored geographic point.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">datetime</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">SimpleGIS</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">l</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">l</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">SimpleGIS</span><span class="o">.</span><span class="n">GeographicPoint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="n">Track</span><span class="p">(</span><span class="n">l</span><span class="p">)</span> 
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="o">.</span><span class="n">get_startTime</span><span class="p">()</span>
+<span class="go">datetime(2015, 6, 10, 15, 8, 24, 78915)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="SimpleGIS.Track.get_totalDistance">
+<code class="descname">get_totalDistance</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#SimpleGIS.Track.get_totalDistance" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the total distance traveled of the track in km . Evaluate from distances between each adjacent point.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">float</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">SimpleGIS</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">l</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">l</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">SimpleGIS</span><span class="o">.</span><span class="n">GeographicPoint</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">l</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">SimpleGIS</span><span class="o">.</span><span class="n">GeographicPoint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="n">Track</span><span class="p">(</span><span class="n">l</span><span class="p">)</span> 
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="o">.</span><span class="n">get_totalDistance</span><span class="p">()</span>
+<span class="go">555.986</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="SimpleGIS.Track.next">
+<code class="descname">next</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#SimpleGIS.Track.next" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the next geographic point in the ordered geographic point list. Starts at the first point, and returns None after it reach the last point of the list.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="#SimpleGIS.GeographicPoint" title="SimpleGIS.GeographicPoint">SimpleGIS.GeographicPoint</a></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">SimpleGIS</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">l</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">l</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">SimpleGIS</span><span class="o">.</span><span class="n">GeographicPoint</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">20</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">l</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">SimpleGIS</span><span class="o">.</span><span class="n">GeographicPoint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="n">Track</span><span class="p">(</span><span class="n">l</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">gp</span> <span class="o">=</span> <span class="n">t</span><span class="o">.</span><span class="n">next</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">gp</span><span class="o">.</span><span class="n">get_latitude</span>
+<span class="go">10</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="SimpleGIS.Track.push_back">
+<code class="descname">push_back</code><span class="sig-paren">(</span><em>gp</em><span class="sig-paren">)</span><a class="headerlink" href="#SimpleGIS.Track.push_back" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add a new point to the end of the ordered list.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>gp</strong> (<a class="reference internal" href="#SimpleGIS.GeographicPoint" title="SimpleGIS.GeographicPoint"><em>GeographicPoint</em></a>) &#8211; a geographic point to add to the back of the track.</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">SimpleGIS</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">l</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">l</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">SimpleGIS</span><span class="o">.</span><span class="n">GeographicPoint</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="n">Track</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="o">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">SimpleGIS</span><span class="o">.</span><span class="n">GeographicPoint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="o">.</span><span class="n">get_totalDistance</span><span class="p">()</span>
+<span class="go">555.986</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="SimpleGIS.Track.remove">
+<code class="descname">remove</code><span class="sig-paren">(</span><em>i</em><span class="sig-paren">)</span><a class="headerlink" href="#SimpleGIS.Track.remove" title="Permalink to this definition">¶</a></dt>
+<dd><p>Remove a point from the polygon</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>i(int)</strong> &#8211; the index of the geographic point to remove.</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">SimpleGIS</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">l</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">l</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">SimpleGIS</span><span class="o">.</span><span class="n">GeographicPoint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">l</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">SimpleGIS</span><span class="o">.</span><span class="n">GeographicPoint</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">l</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">SimpleGIS</span><span class="o">.</span><span class="n">GeographicPoint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="n">Track</span><span class="p">(</span><span class="n">l</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="o">.</span><span class="n">get_totalDistance</span><span class="p">()</span>
+<span class="go">555.986</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="gpxfparser">
+<h2>GPXFParser<a class="headerlink" href="#gpxfparser" title="Permalink to this headline">¶</a></h2>
+<p>A parser class for parsing GPX file. It can parse GPX files into Track, Polygon, and GeoJon types.</p>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="#SimpleGIS.GPXFParser" title="SimpleGIS.GPXFParser"><code class="xref py py-obj docutils literal"><span class="pre">GPXFParser</span></code></a>(gpx_f)</td>
+<td>Construct a GPXFParser object.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#SimpleGIS.GPXFParser.get_GPList" title="SimpleGIS.GPXFParser.get_GPList"><code class="xref py py-obj docutils literal"><span class="pre">GPXFParser.get_GPList</span></code></a>()</td>
+<td>Parse a valid GPX into a list of geographic points.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#SimpleGIS.GPXFParser.get_GeoJsonFormat" title="SimpleGIS.GPXFParser.get_GeoJsonFormat"><code class="xref py py-obj docutils literal"><span class="pre">GPXFParser.get_GeoJsonFormat</span></code></a>()</td>
+<td>Parse a valid GPX into a valid GeoJson string.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#SimpleGIS.GPXFParser.get_Track" title="SimpleGIS.GPXFParser.get_Track"><code class="xref py py-obj docutils literal"><span class="pre">GPXFParser.get_Track</span></code></a>()</td>
+<td>Parse a valid GPX into a Track object.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#SimpleGIS.GPXFParser.parse" title="SimpleGIS.GPXFParser.parse"><code class="xref py py-obj docutils literal"><span class="pre">GPXFParser.parse</span></code></a>(gpx_f)</td>
+<td>Parse the input GPX file.</td>
+</tr>
+</tbody>
+</table>
+<dl class="class">
+<dt id="SimpleGIS.GPXFParser">
+<em class="property">class </em><code class="descclassname">SimpleGIS.</code><code class="descname">GPXFParser</code><span class="sig-paren">(</span><em>gpx_f</em><span class="sig-paren">)</span><a class="headerlink" href="#SimpleGIS.GPXFParser" title="Permalink to this definition">¶</a></dt>
+<dd><p>Construct a GPXFParser object.</p>
+<dl class="method">
+<dt id="SimpleGIS.GPXFParser.get_GPList">
+<code class="descname">get_GPList</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#SimpleGIS.GPXFParser.get_GPList" title="Permalink to this definition">¶</a></dt>
+<dd><p>Parse a valid GPX into a list of geographic points.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">list</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">SimpleGIS</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;foo.gpx&quot;</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">parser</span> <span class="o">=</span> <span class="n">GPXFParser</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">parser</span><span class="o">.</span><span class="n">parse</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">gp_list</span> <span class="o">=</span> <span class="n">parser</span><span class="o">.</span><span class="n">get_GPList</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">gp_list</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">get_time</span><span class="p">()</span>
+<span class="go">datetime(2015, 6, 10, 15, 8, 24, 78915)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="SimpleGIS.GPXFParser.get_GeoJsonFormat">
+<code class="descname">get_GeoJsonFormat</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#SimpleGIS.GPXFParser.get_GeoJsonFormat" title="Permalink to this definition">¶</a></dt>
+<dd><p>Parse a valid GPX into a valid GeoJson string. GeoJon format is a valid format to export to google map.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">str</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">SimpleGIS</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;foo.gpx&quot;</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">parser</span> <span class="o">=</span> <span class="n">GPXFParser</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">parser</span><span class="o">.</span><span class="n">parse</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="n">parser</span><span class="o">.</span><span class="n">get_GeoJsonFormat</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span> <span class="n">s</span>
+<span class="go">{&quot;type&quot;:&quot;FeatureCollection&quot;,&quot;features&quot;:[{&quot;type&quot;:&quot;Feature&quot;,&quot;properties&quot;:{},&quot;geometry&quot;:{&quot;type&quot;:&quot;Point&quot;,&quot;coordinates&quot;:[-122.92156219482422,49.27654080832181]}},{&quot;type&quot;:&quot;Feature&quot;,&quot;properties&quot;:{},&quot;geometry&quot;:{&quot;type&quot;:&quot;Polygon&quot;,&quot;coordinates&quot;:[[[-122.93460845947266,49.28325995376115],[-122.90096282958983,49.283035996995174],[-122.90096282958983,49.269820747425406],[-122.93289184570312,49.27049279471154],[-122.93460845947266,49.28325995376115]]]}}]}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="SimpleGIS.GPXFParser.get_Track">
+<code class="descname">get_Track</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#SimpleGIS.GPXFParser.get_Track" title="Permalink to this definition">¶</a></dt>
+<dd><p>Parse a valid GPX into a Track object.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="#SimpleGIS.Track" title="SimpleGIS.Track">SimpleGIS.Track</a></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">SimpleGIS</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;foo.gpx&quot;</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">parser</span> <span class="o">=</span> <span class="n">GPXFParser</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">parser</span><span class="o">.</span><span class="n">parse</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="n">parser</span><span class="o">.</span><span class="n">get_Track</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="o">.</span><span class="n">get_startTime</span><span class="p">()</span>
+<span class="go">datetime(2015, 6, 10, 15, 8, 24, 78915)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="SimpleGIS.GPXFParser.parse">
+<code class="descname">parse</code><span class="sig-paren">(</span><em>gpx_f</em><span class="sig-paren">)</span><a class="headerlink" href="#SimpleGIS.GPXFParser.parse" title="Permalink to this definition">¶</a></dt>
+<dd><p>Parse the input GPX file. Throws InvalidFormatError error if file is not valid GPX file.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>gpx_f(File)</strong> &#8211; An readable opened file with suffix .gpx.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><strong>InvalidFormatError</strong> &#8211; Raise when the input format is not valid .gpx file.</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;foo.gpx&quot;</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">parser</span> <span class="o">=</span> <span class="n">GPXFParser</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">parser</span><span class="o">.</span><span class="n">parse</span><span class="p">()</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="locationinfo">
+<h2>LocationInfo<a class="headerlink" href="#locationinfo" title="Permalink to this headline">¶</a></h2>
+<p>A LocationInfo object contains location information about a geographic point.</p>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="#SimpleGIS.LocationInfo" title="SimpleGIS.LocationInfo"><code class="xref py py-obj docutils literal"><span class="pre">LocationInfo</span></code></a>(country,&nbsp;province,&nbsp;city,&nbsp;timeZone)</td>
+<td>Construct a locationInfo object.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#SimpleGIS.LocationInfo.get_city" title="SimpleGIS.LocationInfo.get_city"><code class="xref py py-obj docutils literal"><span class="pre">LocationInfo.get_city</span></code></a>()</td>
+<td>This gets the city of this location</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#SimpleGIS.LocationInfo.get_country" title="SimpleGIS.LocationInfo.get_country"><code class="xref py py-obj docutils literal"><span class="pre">LocationInfo.get_country</span></code></a>()</td>
+<td>This gets the country of this location</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#SimpleGIS.LocationInfo.get_province" title="SimpleGIS.LocationInfo.get_province"><code class="xref py py-obj docutils literal"><span class="pre">LocationInfo.get_province</span></code></a>()</td>
+<td>This gets the province of this location</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#SimpleGIS.LocationInfo.get_timeZone" title="SimpleGIS.LocationInfo.get_timeZone"><code class="xref py py-obj docutils literal"><span class="pre">LocationInfo.get_timeZone</span></code></a>()</td>
+<td>This gets the time zone of this location</td>
+</tr>
+</tbody>
+</table>
+<dl class="class">
+<dt id="SimpleGIS.LocationInfo">
+<em class="property">class </em><code class="descclassname">SimpleGIS.</code><code class="descname">LocationInfo</code><span class="sig-paren">(</span><em>country</em>, <em>province</em>, <em>city</em>, <em>timeZone</em><span class="sig-paren">)</span><a class="headerlink" href="#SimpleGIS.LocationInfo" title="Permalink to this definition">¶</a></dt>
+<dd><p>Construct a locationInfo object.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>country(str)</strong> &#8211; country of this new location.</li>
+<li><strong>province(str)</strong> &#8211; province of this new location.</li>
+<li><strong>city(str)</strong> &#8211; city of this new location.</li>
+<li><strong>timeZone(str)</strong> &#8211; timeZone of this new location.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">You shouldn&#8217;t construct objects of this class yourself, instead, you will get the object from the get_locationInfo method in GeographicPoint class.</p>
+</div>
+<dl class="method">
+<dt id="SimpleGIS.LocationInfo.get_city">
+<code class="descname">get_city</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#SimpleGIS.LocationInfo.get_city" title="Permalink to this definition">¶</a></dt>
+<dd><p>This gets the city of this location</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">SimpleGIS</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">loc</span> <span class="o">=</span> <span class="n">SimpleGIS</span><span class="o">.</span><span class="n">LocationInfo</span><span class="p">(</span><span class="s2">&quot;Canada&quot;</span><span class="p">,</span><span class="s2">&quot;BC&quot;</span><span class="p">,</span><span class="s2">&quot;Vancouver&quot;</span><span class="p">,</span> <span class="s2">&quot;Pacific&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span> <span class="n">loc</span><span class="o">.</span><span class="n">get_city</span><span class="p">()</span>
+<span class="go">Vancouver</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="SimpleGIS.LocationInfo.get_country">
+<code class="descname">get_country</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#SimpleGIS.LocationInfo.get_country" title="Permalink to this definition">¶</a></dt>
+<dd><p>This gets the country of this location</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">SimpleGIS</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">loc</span> <span class="o">=</span> <span class="n">SimpleGIS</span><span class="o">.</span><span class="n">LocationInfo</span><span class="p">(</span><span class="s2">&quot;Canada&quot;</span><span class="p">,</span><span class="s2">&quot;BC&quot;</span><span class="p">,</span><span class="s2">&quot;Vancouver&quot;</span><span class="p">,</span> <span class="s2">&quot;Pacific&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span> <span class="n">loc</span><span class="o">.</span><span class="n">get_country</span><span class="p">()</span>
+<span class="go">Canada</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="SimpleGIS.LocationInfo.get_province">
+<code class="descname">get_province</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#SimpleGIS.LocationInfo.get_province" title="Permalink to this definition">¶</a></dt>
+<dd><p>This gets the province of this location</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">SimpleGIS</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">loc</span> <span class="o">=</span> <span class="n">SimpleGIS</span><span class="o">.</span><span class="n">LocationInfo</span><span class="p">(</span><span class="s2">&quot;Canada&quot;</span><span class="p">,</span><span class="s2">&quot;BC&quot;</span><span class="p">,</span><span class="s2">&quot;Vancouver&quot;</span><span class="p">,</span> <span class="s2">&quot;Pacific&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span> <span class="n">loc</span><span class="o">.</span><span class="n">get_province</span><span class="p">()</span>
+<span class="go">BC</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="SimpleGIS.LocationInfo.get_timeZone">
+<code class="descname">get_timeZone</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#SimpleGIS.LocationInfo.get_timeZone" title="Permalink to this definition">¶</a></dt>
+<dd><p>This gets the time zone of this location</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">SimpleGIS</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">loc</span> <span class="o">=</span> <span class="n">SimpleGIS</span><span class="o">.</span><span class="n">LocationInfo</span><span class="p">(</span><span class="s2">&quot;Canada&quot;</span><span class="p">,</span><span class="s2">&quot;BC&quot;</span><span class="p">,</span><span class="s2">&quot;Vancouver&quot;</span><span class="p">,</span> <span class="s2">&quot;Pacific&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span> <span class="n">loc</span><span class="o">.</span><span class="n">get_timeZone</span><span class="p">()</span>
+<span class="go">Pacific</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="valueoutofrangeerror">
+<h2>ValueOutOfRangeError<a class="headerlink" href="#valueoutofrangeerror" title="Permalink to this headline">¶</a></h2>
+<p>There was an value out of the valid range.</p>
+<dl class="class">
+<dt id="SimpleGIS.ValueOutOfRangeError">
+<em class="property">class </em><code class="descclassname">SimpleGIS.</code><code class="descname">ValueOutOfRangeError</code><a class="headerlink" href="#SimpleGIS.ValueOutOfRangeError" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="method">
+<dt id="SimpleGIS.ValueOutOfRangeError.toString">
+<code class="descname">toString</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#SimpleGIS.ValueOutOfRangeError.toString" title="Permalink to this definition">¶</a></dt>
+<dd><p>Print out error message.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">str</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="invalidformaterror">
+<h2>InvalidFormatError<a class="headerlink" href="#invalidformaterror" title="Permalink to this headline">¶</a></h2>
+<p>Input file format invalid.</p>
+<dl class="class">
+<dt id="SimpleGIS.InvalidFormatError">
+<em class="property">class </em><code class="descclassname">SimpleGIS.</code><code class="descname">InvalidFormatError</code><a class="headerlink" href="#SimpleGIS.InvalidFormatError" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="method">
+<dt id="SimpleGIS.InvalidFormatError.toString">
+<code class="descname">toString</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#SimpleGIS.InvalidFormatError.toString" title="Permalink to this definition">¶</a></dt>
+<dd><p>Print out error message.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">str</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="tutorials.html" class="btn btn-neutral" title="Getting Started with SimpleGIS" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016, Anonymous.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'1.0.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

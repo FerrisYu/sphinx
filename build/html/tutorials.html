@@ -1,0 +1,283 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Getting Started with SimpleGIS &mdash; final 1.0.0 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="final 1.0.0 documentation" href="index.html"/>
+        <link rel="next" title="SimpleGIS API Reference" href="API Reference.html"/>
+        <link rel="prev" title="Welcome to SimpleGIS!" href="index.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> final
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Getting Started with SimpleGIS</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#installation">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#find-out-current-location-information">Find out current location information</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#construct-a-track-as-you-walk">Construct a track as you walk</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#parse-a-gpx-file-in-to-geojson-string">Parse a GPX file in to GeoJson string</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#look-inside-simplegis">Look inside SimpleGIS</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="API Reference.html">SimpleGIS API Reference</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="index.html">final</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+      
+    <li>Getting Started with SimpleGIS</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/tutorials.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="getting-started-with-simplegis">
+<h1>Getting Started with SimpleGIS<a class="headerlink" href="#getting-started-with-simplegis" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="installation">
+<h2>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h2>
+<p>You can use pip to install SimpleGIS with one single command in your terminal.
+<code class="docutils literal"><span class="pre">$</span> <span class="pre">pip</span> <span class="pre">install</span> <span class="pre">SimpleGIS</span></code></p>
+</div>
+<div class="section" id="find-out-current-location-information">
+<h2>Find out current location information<a class="headerlink" href="#find-out-current-location-information" title="Permalink to this headline">¶</a></h2>
+<p>SimpleGIS provides simple-to-use APIs for access locations infomation. Let&#8217;s explore how we can get the current location information.</p>
+<p>We start by importing the SimpleGIS module:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">SimpleGIS</span>
+</pre></div>
+</div>
+<p>Now, we can use the now() function to get the current geographic point.</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">gp</span> <span class="o">=</span> <span class="n">SimpleGIS</span><span class="o">.</span><span class="n">GeographicPoint</span><span class="o">.</span><span class="n">now</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>After we have capture a geographic point, we can call the get_locationInfo() member function to receive the location information.</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">loc</span> <span class="o">=</span> <span class="n">gp</span><span class="o">.</span><span class="n">get_locationInfo</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Now, we can access the infomations such as current country, province, and time zone as we want!</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span> <span class="n">loc</span><span class="o">.</span><span class="n">get_timeZone</span><span class="p">()</span>
+<span class="go">Pacific</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span> <span class="n">loc</span><span class="o">.</span><span class="n">get_city</span><span class="p">()</span>
+<span class="go">Burnaby</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="construct-a-track-as-you-walk">
+<h2>Construct a track as you walk<a class="headerlink" href="#construct-a-track-as-you-walk" title="Permalink to this headline">¶</a></h2>
+<p>Now, let&#8217;s do something more interesting with SimpleGIS. We can construct a movement track using SimpleGIS.</p>
+<p>We first construct a Track object to store our geographic points</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">SimpleGIS</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">l</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="n">Track</span><span class="p">(</span><span class="n">l</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Now, we can record my geography point every 5 seconds. The following block of code will record the geographic location each 5 seconds for a minutes.</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">12</span><span class="p">):</span>
+<span class="gp">&gt;&gt;&gt; </span>    <span class="n">t</span><span class="o">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">SimpleGIS</span><span class="o">.</span><span class="n">GeographicPoint</span><span class="o">.</span><span class="n">now</span><span class="p">())</span>
+<span class="gp">&gt;&gt;&gt; </span>    <span class="n">sleep</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<span class="go">&gt;&gt;&gt;</span>
+</pre></div>
+</div>
+<p>After we have a track, we can use the get_totalDistance() method to measure how far the user have walk so far in kilomiters.</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="o">.</span><span class="n">get_totalDistance</span><span class="p">()</span>
+<span class="go">0.5</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="parse-a-gpx-file-in-to-geojson-string">
+<h2>Parse a GPX file in to GeoJson string<a class="headerlink" href="#parse-a-gpx-file-in-to-geojson-string" title="Permalink to this headline">¶</a></h2>
+<p>Let&#8217;s try importing a GPX file and use our SimpleGIS module to convert it into GeoJson string.</p>
+<p>We start by opening  a GPX file and pass it to the GPXFparser using the parse() method.</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;foo.gpx&quot;</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">parser</span> <span class="o">=</span> <span class="n">GPXFParser</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">parser</span><span class="o">.</span><span class="n">parse</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>We have successfully parse the GPX file! Let&#8217;s convert it into a GeoJson format string.</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="n">parser</span><span class="o">.</span><span class="n">get_GeoJsonFormat</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Finally, we have stroed the Geojson string in the variable s. Let&#8217;s print it and see how the string looks like.</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span> <span class="n">s</span>
+<span class="go">{&quot;type&quot;:&quot;FeatureCollection&quot;,&quot;features&quot;:[{&quot;type&quot;:&quot;Feature&quot;,&quot;properties&quot;:{},&quot;geometry&quot;:{&quot;type&quot;:&quot;Point&quot;,&quot;coordinates&quot;:[-122.92156219482422,49.27654080832181]}},{&quot;type&quot;:&quot;Feature&quot;,&quot;properties&quot;:{},&quot;geometry&quot;:{&quot;type&quot;:&quot;Polygon&quot;,&quot;coordinates&quot;:[[[-122.93460845947266,49.28325995376115],[-122.90096282958983,49.283035996995174],[-122.90096282958983,49.269820747425406],[-122.93289184570312,49.27049279471154],[-122.93460845947266,49.28325995376115]]]}}]}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="look-inside-simplegis">
+<h2>Look inside SimpleGIS<a class="headerlink" href="#look-inside-simplegis" title="Permalink to this headline">¶</a></h2>
+<p>If you want to know all the avaliable methods and classes in SimpleGIS, check out our <a class="reference internal" href="API Reference.html"><span class="doc">SimpleGIS API Reference</span></a>!</p>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="API Reference.html" class="btn btn-neutral float-right" title="SimpleGIS API Reference" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral" title="Welcome to SimpleGIS!" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016, Anonymous.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'1.0.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>
