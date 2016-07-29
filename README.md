@@ -1,4 +1,4 @@
-# sphinx
+# API doc created from Sphinx tempalte
 An API document for an makeup geography information 
 
 To see the generated API document demo:
